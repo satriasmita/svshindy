@@ -1,0 +1,176 @@
+Package operations: 19 installs, 49 updates, 4 removals
+  - Removing symfony/debug (v3.4.18)
+  - Removing psr/log (1.0.2)
+  - Removing composer/installers (v1.6.0)
+  - Removing phpunit/phpunit-mock-objects (3.4.4)
+  - Updating yiisoft/yii2-composer (2.0.7 => 2.0.8): Downloading (100%)
+  - Installing symfony/polyfill-php72 (v1.12.0): Downloading (100%)
+  - Updating symfony/polyfill-mbstring (v1.10.0 => v1.12.0): Downloading (100%)
+  - Installing symfony/polyfill-intl-idn (v1.12.0): Downloading (100%)
+  - Installing symfony/polyfill-iconv (v1.12.0): Downloading (100%)
+  - Installing doctrine/lexer (1.0.2): Downloading (100%)
+  - Installing egulias/email-validator (2.1.11): Downloading (100%)
+  - Updating swiftmailer/swiftmailer (v5.4.12 => v6.2.1): Downloading (100%)
+  - Updating ezyang/htmlpurifier (v4.10.0 => v4.11.0): Downloading (100%)
+  - Updating bower-asset/jquery (3.2.1 => 3.4.1): Downloading (100%)
+  - Updating cebe/markdown (1.1.2 => 1.2.1): Downloading (100%)
+  - Updating yiisoft/yii2 (2.0.15.1 => 2.0.26): Downloading (100%)
+  - Updating yiisoft/yii2-swiftmailer (2.0.7 => 2.1.2): Downloading (100%)
+  - Updating kartik-v/yii2-krajee-base (v2.0.1 => v2.0.5): Downloading (100%)
+  - Updating kartik-v/yii2-widget-datetimepicker (v1.4.8 => v1.4.9): Downloading (100%)
+  - Updating imagine/imagine (v0.7.1 => 1.2.2): Downloading (100%)
+  - Updating yiisoft/yii2-imagine (2.1.1 => 2.2.0): Downloading (100%)
+  - Updating bower-asset/bootstrap (v3.3.7 => v3.4.1): Downloading (100%)
+  - Updating yiisoft/yii2-bootstrap (2.0.8 => 2.0.10): Downloading (100%)
+  - Updating yiisoft/yii2-gii (2.0.7 => 2.0.8): Downloading (100%)
+  - Updating symfony/polyfill-ctype (v1.10.0 => v1.12.0): Downloading (100%)
+  - Updating symfony/yaml (v3.4.18 => v4.3.4): Downloading (100%)
+  - Updating doctrine/instantiator (1.0.5 => 1.2.0): Downloading (100%)
+  - Updating sebastian/recursion-context (2.0.0 => 3.0.0): Downloading (100%)
+  - Updating sebastian/exporter (2.0.0 => 3.1.1): Downloading (100%)
+  - Updating sebastian/diff (1.4.3 => 3.0.2): Downloading (100%)
+  - Updating sebastian/comparator (1.2.4 => 3.0.2): Downloading (100%)
+  - Updating webmozart/assert (1.3.0 => 1.5.0): Downloading (100%)
+  - Updating phpdocumentor/reflection-docblock (3.3.2 => 4.3.1): Downloading (100%)
+  - Updating phpspec/prophecy (1.8.0 => 1.8.1): Downloading (100%)
+  - Updating myclabs/deep-copy (1.7.0 => 1.9.3): Downloading (100%)
+  - Updating sebastian/resource-operations (1.0.0 => 2.0.1): Downloading (100%)
+  - Installing sebastian/object-reflector (1.1.1): Downloading (100%)
+  - Updating sebastian/object-enumerator (2.0.1 => 3.0.3): Downloading (100%)
+  - Updating sebastian/global-state (1.1.1 => 2.0.0): Downloading (100%)
+  - Updating sebastian/environment (2.0.0 => 4.2.2): Downloading (100%)
+  - Updating phpunit/php-timer (1.0.9 => 2.1.2): Downloading (100%)
+  - Updating phpunit/php-file-iterator (1.4.5 => 2.0.2): Downloading (100%)
+  - Installing theseer/tokenizer (1.1.3): Downloading (100%)
+  - Updating phpunit/php-token-stream (1.4.12 => 3.1.0): Downloading (100%)
+  - Updating phpunit/php-code-coverage (4.0.8 => 6.1.4): Downloading (100%)
+  - Installing phar-io/version (2.0.1): Downloading (100%)
+  - Installing phar-io/manifest (1.0.3): Downloading (100%)
+  - Updating phpunit/phpunit (5.7.27 => 7.5.15): Downloading (100%)
+  - Updating codeception/phpunit-wrapper (6.0.12 => 7.7.1): Downloading (100%)
+  - Updating codeception/stub (2.0.4 => 2.1.0): Downloading (100%)
+  - Updating behat/gherkin (v4.5.1 => v4.6.0): Downloading (100%)
+  - Updating symfony/dom-crawler (v3.4.18 => v4.3.4): Downloading (100%)
+  - Updating symfony/css-selector (v3.4.18 => v4.3.4): Downloading (100%)
+  - Updating symfony/browser-kit (v3.4.18 => v4.3.4): Downloading (100%)
+  - Installing symfony/event-dispatcher-contracts (v1.1.5): Downloading (100%)
+  - Installing psr/container (1.0.0): Downloading (100%)
+  - Updating symfony/event-dispatcher (v3.4.18 => v4.3.4): Downloading (100%)
+  - Installing symfony/service-contracts (v1.1.6): Downloading (100%)
+  - Installing symfony/polyfill-php73 (v1.12.0): Downloading (100%)
+  - Updating symfony/console (v3.4.18 => v4.3.4): Downloading (100%)
+  - Updating symfony/finder (v3.4.18 => v4.3.4): Downloading (100%)
+  - Installing ralouphie/getallheaders (3.0.3): Downloading (100%)
+  - Updating guzzlehttp/psr7 (1.4.2 => 1.6.1): Downloading (100%)
+  - Updating codeception/base (2.5.1 => 2.5.6): Downloading (100%)
+  - Updating almasaeed2010/adminlte (v2.4.8 => v2.4.18): Downloading (100%)
+  - Installing markbaker/matrix (1.1.4): Downloading (100%)
+  - Installing markbaker/complex (1.4.7): Downloading (100%)
+  - Installing psr/simple-cache (1.0.1): Downloading (100%)
+  - Installing phpoffice/phpspreadsheet (1.9.0): Downloading (100%)
+  - Installing select2/select2 (4.0.8): Downloading (100%)
+  - Removing kartik-v/yii2-widget-datepicker (dev-master ac89cc2)
+  - Installing kartik-v/yii2-widget-datepicker (dev-master d75bfb1): Cloning d75bfb1291
+    Failed to download kartik-v/yii2-widget-datepicker from source: Failed to clone https://github.com/kartik-v/yii2-widget-datepicker.git, git was not found, check that it is installed and in your PATH env.
+
+'git' is not recognized as an internal or external command,
+operable program or batch file.
+
+    Now trying to download from dist
+  - Installing kartik-v/yii2-widget-datepicker (dev-master d75bfb1): Downloading (100%)
+  - Removing kartik-v/yii2-widget-select2 (dev-master 2bbb9ca)
+  - Installing kartik-v/yii2-widget-select2 (dev-master 798dcea): Cloning 798dcea129
+    Failed to download kartik-v/yii2-widget-select2 from source: Failed to clone https://github.com/kartik-v/yii2-widget-select2.git, git was not found, check that it is installed and in your PATH env.
+
+'git' is not recognized as an internal or external command,
+operable program or batch file.
+
+    Now trying to download from dist
+  - Installing kartik-v/yii2-widget-select2 (dev-master 798dcea): Downloading (100%)
+symfony/polyfill-intl-idn suggests installing ext-intl (For best performance)
+egulias/email-validator suggests installing ext-intl (PHP Internationalization Libraries are required to use the SpoofChecking validation)
+symfony/event-dispatcher-contracts suggests installing psr/event-dispatcher
+symfony/service-contracts suggests installing symfony/service-implementation
+phpoffice/phpspreadsheet suggests installing mpdf/mpdf (Option for rendering PDF with PDF Writer)
+phpoffice/phpspreadsheet suggests installing dompdf/dompdf (Option for rendering PDF with PDF Writer)
+phpoffice/phpspreadsheet suggests installing tecnickcom/tcpdf (Option for rendering PDF with PDF Writer)
+phpoffice/phpspreadsheet suggests installing jpgraph/jpgraph (Option for rendering charts, or including charts with PDF or HTML Writers)
+Writing lock file
+Generating autoload files
+
+  Seems you have upgraded Yii Framework from version 2.0.15.1 to 2.0.26.
+
+  Please check the upgrade notes for possible incompatible changes
+  and adjust your application code accordingly.
+
+  Upgrade from Yii 2.0.20
+  -----------------------
+
+  * `yii\db\Query::select()` and `addSelect()` now normalize the format that columns are stored in when saving them
+    to `$this->select`, so code that works directly with that property may need to be modified.
+
+    For the following code:
+
+    ```php
+    $a = $query->select('*');
+    $b = $query->select('id, name');
+    ```
+
+    The value was stored as is i.e.
+
+    ```php
+    // a
+    ['*']
+
+    // b
+    ['id', 'name']
+    ```
+
+    Now it is stored as
+
+    ```php
+    // a
+    ['*' => '*']
+
+    // b
+    ['id' => 'id', 'name' => 'name']
+    ```
+
+  Upgrade from Yii 2.0.16
+  -----------------------
+
+  * In case you have extended the `yii\web\DbSession` class you should check if your
+    custom implementation is compatible with the new `yii\web\DbSession::$fields` attribute.
+    Especially when overriding the `yii\web\DbSession::writeSession($id, $data)` function.
+
+  Upgrade from Yii 2.0.15
+  -----------------------
+
+  * Updated dependency to `cebe/markdown` to version `1.2.x`.
+    If you need stick with 1.1.x, you can specify that in your `composer.json` by
+    adding the following line in the `require` section:
+
+    ```json
+    "cebe/markdown": "~1.1.0",
+    ```
+
+  * `yii\mutex\Mutex::acquire()` no longer returns `true` if lock is already acquired by the same component in the same process.
+    Make sure that you're not trying to acquire the same lock multiple times in a way that may create infinite loops, for example:
+
+    ```php
+    if (Yii::$app->mutex->acquire('test')) {
+         while (!Yii::$app->mutex->acquire('test')) {
+             // `Yii::$app->mutex->acquire('test')` will always return `false` here, since lock is already acquired
+        }
+    }
+    ```
+
+  * Formatter methods `asInteger`, `asDecimal`, `asPercent`, and `asCurrency` are using now inner fallback methods to handle
+    very big number values to counter inner PHP casting and floating point number presentation issues. Make sure to provide
+    such values as string numbers.
+
+  * Active Record relations are now being reset when corresponding key fields are changed. If you have relied on the fact
+    that relations are never reloaded you have to adjust your code.
+
+  You can find the upgrade notes for all versions online at:
+  https://github.com/yiisoft/yii2/blob/2.0.26/framework/UPGRADE.md
