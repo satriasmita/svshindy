@@ -1,39 +1,28 @@
 <?php
-use yii\helpers\Url;
+
 use yii\helpers\Html;
 use yii\grid\GridView;
-use yii\helpers\ArrayHelper;
-use kartik\date\DatePicker;
-use backend\models\Posts;
-use yii\helpers\StringHelper;
-use yii\widgets\LinkPager;
 
-/* @var this yii\web\View */
+/* @var $this yii\web\View */
+/* @var $searchModel backend\models\PostsSearch */
+/* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Welcome to Sharing Vision';
-
-$tombol = '{view}';
+$this->title = 'Posts';
+$this->params['breadcrumbs'][] = $this->title;
+$tombol = '{view} {update} {delete}';
 ?>
-<style type="text/css">
-    marquee p
-{
-    white-space:nowrap;
-}
-table, th, td {
-   border: 1px solid;
-}
-</style>
-
-<div class="site-index">
-  <div class="box box-solid box-success">
+<div class="posts-index">
+<div class="box box-solid box-info">
         <div class="box-header">
-            <h3 class="box-title">Data Postingan</h3>
-           
+            <h3 class="box-title"><?= Html::encode($this->title) ?></h3>
+            <div class="box-tools pull-right">
+                <?= Html::a('<i class="fa fa-fw fa-plus-square"></i><b>Tambah ' .Html::encode($this->title).'</b>', ['create'], ['class' => 'btn btn-primary']) ?>
+            </div>
         </div>
         <div class="box-body">
-        <?= GridView::widget([
-        'dataProvider' => $dataPos,
-        'filterModel' => $searchPos,
+    <?= GridView::widget([
+        'dataProvider' => $dataProvider,
+        'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
@@ -82,9 +71,4 @@ table, th, td {
             ],
         ],
     ]); ?>
-    </div> 
-</div>
-
-    </div> 
-</div>
 </div>

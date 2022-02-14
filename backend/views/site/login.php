@@ -21,13 +21,11 @@ $this->title = 'Masuk Ke Aplikasi';
 }
 </style>
 <div class="limiter">
-    <div class="container-login100" style="background-image: url('../login/images/bg3.jpg');">
+    <div class="container-login100" style="background-image: url('../login/images/backgroundnew.png');">
         <div class="wrap-login100 p-t-30 p-b-50">
-            <center>
-                <img src="<?php echo Url::to('@web/images/logo.png')?>" alt="Logo-Kota" style="width:100px;">
-            </center><br>
+            
                 
-            <center> <h2 style="color:white;">TRIPADVISOR KOTA PARIAMAN</h2>
+            <center> <h2 style="color:white;">SHARING VISION</h2>
             </center><br>
             <!-- <span class="login100-form-title p-b-41">
                 Masukkan <br>Username dan Password

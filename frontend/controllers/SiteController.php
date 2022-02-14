@@ -12,9 +12,7 @@ use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
-use backend\models\DestinasiWisata;
-use backend\models\Kuliner;
-use backend\models\Hotel;
+use backend\models\Posts;
 
 /**
  * Site controller
@@ -75,16 +73,12 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        $destinasi = DestinasiWisata::find()->where(['status' => 1])->orderBy('id_destinasi DESC')->limit(10)->all();
-        $kuliner = Kuliner::find()->where(['status' => 1])->orderBy('id_kuliner DESC')->limit(10)->all();
-        $hotel = Hotel::find()->where(['status' => 1])->orderBy('hotel_id DESC')->limit(10)->all();
+        $pos = Posts::find()->where(['status' => 1])->orderBy('id DESC')->limit(5)->all();
 
         // $informasi = Informasi::find()->where(['info_status' => 1])->orderBy('info_tahun DESC')->limit(10)->all();
 
         return $this->render('index', [
-            'destinasi' => $destinasi,
-            'kuliner' => $kuliner,
-            'hotel' => $hotel,
+            'pos' => $pos,
         ]);
     }
 

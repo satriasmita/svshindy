@@ -39,5 +39,5 @@ use dmstr\widgets\Alert;
     <div class="pull-right hidden-xs">
         <b>Version 2.0</b>
     </div>
-     <strong>Copyright &copy; 2019 <a>Diskominfo Kota Pariaman</a>.</strong>
+     <strong>Copyright &copy; 2022 <a>Shindy Satriasmita</a>.</strong>
 </footer>

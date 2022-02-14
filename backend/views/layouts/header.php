@@ -10,9 +10,9 @@ use common\models\User;
 
 <header class="main-header">
 
-    <!-- <?= Html::a('<span class="logo-mini">TripAdvisor</span><span class="logo-lg">' . Yii::$app->name . '</span>', Yii::$app->homeUrl, ['class' => 'logo']) ?> -->
+    <!-- <?= Html::a('<span class="logo-mini">SharingVision</span><span class="logo-lg">' . Yii::$app->name . '</span>', Yii::$app->homeUrl, ['class' => 'logo']) ?> -->
 
-    <?= Html::a('<span class="logo-mini">Trip</span><span class="logo-lg">' . 'TripAdvisor' . '</span>', Yii::$app->homeUrl, ['class' => 'logo']) ?>
+    <?= Html::a('<span class="logo-mini">Trip</span><span class="logo-lg">' . 'SharingVision' . '</span>', Yii::$app->homeUrl, ['class' => 'logo']) ?>
 
     <nav class="navbar navbar-static-top" role="navigation">
         <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
