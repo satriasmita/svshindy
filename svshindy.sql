@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.2
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 04 Mar 2020 pada 08.02
--- Versi server: 10.4.10-MariaDB
--- Versi PHP: 7.3.12
+-- Generation Time: Feb 14, 2022 at 03:06 PM
+-- Server version: 10.4.13-MariaDB
+-- PHP Version: 7.2.32
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -25,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `agama`
+-- Table structure for table `agama`
 --
 
 CREATE TABLE `agama` (
@@ -36,7 +35,7 @@ CREATE TABLE `agama` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `agenda`
+-- Table structure for table `agenda`
 --
 
 CREATE TABLE `agenda` (
@@ -53,7 +52,7 @@ CREATE TABLE `agenda` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `agenda`
+-- Dumping data for table `agenda`
 --
 
 INSERT INTO `agenda` (`agenda_id`, `agenda_nama`, `agenda_isi`, `agenda_lokasi`, `agenda_mulai`, `agenda_selesai`, `status`, `agenda_photoid`, `agenda_latitude`, `agenda_longitude`) VALUES
@@ -64,7 +63,7 @@ INSERT INTO `agenda` (`agenda_id`, `agenda_nama`, `agenda_isi`, `agenda_lokasi`,
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `biodata`
+-- Table structure for table `biodata`
 --
 
 CREATE TABLE `biodata` (
@@ -94,13 +93,41 @@ CREATE TABLE `biodata` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `destinasi_wisata`
+-- Table structure for table `cagar_budaya`
+--
+
+CREATE TABLE `cagar_budaya` (
+  `cagar_id` int(11) NOT NULL,
+  `cagar_nama` varchar(100) DEFAULT NULL,
+  `cagar_detail` text DEFAULT NULL,
+  `cagar_alamat` text DEFAULT NULL,
+  `cagar_tahun` varchar(10) DEFAULT NULL,
+  `cagar_status` varchar(15) DEFAULT NULL,
+  `cagar_foto1` varchar(255) DEFAULT NULL,
+  `cagar_foto2` varchar(255) DEFAULT NULL,
+  `cagar_foto3` varchar(255) DEFAULT NULL,
+  `cagar_foto4` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `cagar_budaya`
+--
+
+INSERT INTO `cagar_budaya` (`cagar_id`, `cagar_nama`, `cagar_detail`, `cagar_alamat`, `cagar_tahun`, `cagar_status`, `cagar_foto1`, `cagar_foto2`, `cagar_foto3`, `cagar_foto4`) VALUES
+(1, 'testing 2', 'sdasdsa', 'asdasdasd', '2021', '1', 'solar-system-minimalism-q1.jpg', 'solar-system-minimalism-q1.jpg', 'solar-system-minimalism-q1.jpg', 'solar-system-minimalism-q1.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `destinasi_wisata`
 --
 
 CREATE TABLE `destinasi_wisata` (
   `id_destinasi` int(11) NOT NULL,
   `nama_destinasi` varchar(255) DEFAULT NULL,
   `detail` text NOT NULL,
+  `keunggulan` text NOT NULL,
+  `fasilitas` text NOT NULL,
   `alamat` text NOT NULL,
   `latitude` varchar(255) DEFAULT NULL,
   `longitude` varchar(255) DEFAULT NULL,
@@ -113,18 +140,20 @@ CREATE TABLE `destinasi_wisata` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `destinasi_wisata`
+-- Dumping data for table `destinasi_wisata`
 --
 
-INSERT INTO `destinasi_wisata` (`id_destinasi`, `nama_destinasi`, `detail`, `alamat`, `latitude`, `longitude`, `tahun`, `status`, `foto`, `foto2`, `foto3`, `foto4`) VALUES
-(14, 'Pantai Lohong', '<p>Di pantai ini ada taman khusus untuk Anas Malik. pemimpin lokal yang bertanggung jawab atas tata kelola di tingkat masyarakat. Taman ini dihiasi dengan deretan pohon kelapa berdaun dan memiliki pemandangan indah ke lautan India. Dekat dengan itu, ada daya tarik baru untuk anak yang disebut Pohon Rumah Pariaman dan sebuah monumen yang dikenal sebagai Taman Pemuda Asean.</p>\r\n', 'Kelurahan Lohong, Pariaman Tengah', '-0.6339177', '100.118613', 2020, 1, 'alfajrisani17@gmail.com.2.jpeg', 'rian.desrian@gmail.com.3.jpg', 'DSC_0059.jpg', 'HMS_8459.jpg'),
-(15, 'Pantai Cermin', '<p>Terletak di pantai kota Pariaman paling selatan, pantai ini membentang di desa Karan Aur dan Taluak. Kata itu sendiri adalah singkatan dari nama dua desa yang berdekatan. Menawarkan panorama pantai alami yang masih asri dan alami, pantai ini cocok untuk Anda yang gemar beraktifitas berjalan. Selain itu, bagi pecinta olahraga bersepeda, pantai ini juga merupakan pilihan yang pas.</p>\r\n', 'Kelurahan Karan Aur, Pariaman Tengah', '-0.6355229', '100.1199944', 2020, 1, 'rian.desrian@gmail.com.2.jpg', 'alfajrisani17@gmail.com.3.jpeg', 'adjays27@gmail.com.2.jpg', 'baimrahman03@gmail.com.3.jpg'),
-(16, 'Pantai Kata', '<p>Terletak di pantai kota Pariaman paling selatan, pantai ini membentang di desa Karan Aur dan Taluak. Kata itu sendiri adalah singkatan dari nama dua desa yang berdekatan. Menawarkan panorama pantai alami yang masih asri dan alami, pantai ini cocok untuk Anda yang gemar beraktifitas berjalan. Selain itu, bagi pecinta olahraga bersepeda, pantai ini juga merupakan pilihan yang pas.</p>\r\n', 'Desa Taluak, Pariaman Selatan', '-0.6464965', '100.1268444', 2020, 1, 'apriputra1@gmail.com.1.jpg', 'DSC_0017.jpg', 'DSC_0032ed.jpg', 'DSC_0063ed.jpg');
+INSERT INTO `destinasi_wisata` (`id_destinasi`, `nama_destinasi`, `detail`, `keunggulan`, `fasilitas`, `alamat`, `latitude`, `longitude`, `tahun`, `status`, `foto`, `foto2`, `foto3`, `foto4`) VALUES
+(17, 'Monumen TNI AL', '<p>Monumen TNI AL yang terletak di ujung muaro Pariaman, yang diresmikan oleh KSAL ini, menjadi Destinasi wisata sambil mengenang sejarah di Kota Pariaman</p>\r\n', 'Terletak di pantai gandoriah yang sangat dekat dengan perkotaan', '-', 'Pariaman, Indonesia', '-0.6230112', '100.1138609', 2020, 1, 'foto bersama di monumen ALRI.jpg', 'DJI_0107.jpg', 'DJI_0116.jpg', 'DJI_0105.jpg'),
+(18, 'Pantai Gandoriah', '<p>Sebagai salah satu pantai favorit, pasir putih digunakan untuk berbagai kegiatan seperti pertemuan keluarga, senam, sepak bola, bola voli pantai, atau layang-layang terbang. Kemudian, jika Anda datang selama musim selancar, ada banyak klub selancar di pantai ini yang ingin membantu Anda mengendarai ombak eksotis itu.</p>\r\n\r\n<p>Asal usul nama Pantai Gandoriah memiliki kisah tersendiri. Gandoriah adalah nama seorang gadis dalam cerita rakyat Minangkabau. Menurut Kepala Kerjasama Pemasaran dan Pariwisata Kota Pariaman, Asnul Nazar, kisah ini semakin kurang dikenal masyarakat, kecuali oleh para sesepuh masyarakat. Kisah tersebut menceritakan perjalanan cinta seorang pemuda bernama Anggun Nan Tongga bersama Puti Gandoriah, yang tidak lain adalah sepupunya.<br />\r\nDikisahkan, Anggun Nan Tongga pergi berlayar mencari tiga mamak (paman) yang tidak pulang dari luar negeri. Pada perjalanan yang melewati banyak rintangan, Nan Tongga berhasil menemukan pamannya satu per satu. Karena pengkhianatan seorang teman yang pertama kali kembali ke kota asalnya, Puti Gandoriah mengira kekasihnya telah meninggal.<br />\r\nDalam kesedihannya, Puti Gandoriah memutuskan untuk bermeditasi di Gunung Ledang. Kisah ini berakhir tragis ketika Nan Tongga dan Puti Gandoriah bertemu lagi, tetapi harus menerima kenyataan bahwa mereka adalah saudara dan saudari yang tidak diperbolehkan menikah satu sama lain.</p>\r\n', '-', '-', 'Pasir, Pariaman Tengah, Kota Pariaman', '-0.6262856', '100.1128859', 2020, 1, 'DSC_0078.jpg', 'GANDORIAH.jpg', 'GANDORIAH 3.jpg', 'GANDORIAH 4.jpg'),
+(19, 'Pantai Lohong', '<p>Di pantai ini ada taman khusus untuk Anas Malik. pemimpin lokal yang bertanggung jawab atas tata kelola di tingkat masyarakat. Taman ini dihiasi dengan deretan pohon kelapa berdaun dan memiliki pemandangan indah ke lautan India. Dekat dengan itu, ada daya tarik baru untuk anak yang disebut Pohon Rumah Pariaman dan sebuah monumen yang dikenal sebagai Taman Pemuda Asean.</p>\r\n', '-', '-', 'Kelurahan Lohong, Pariaman Tengah', '-0.6339177', '100.118613', 2020, 1, 'apriputra1@gmail.com.1.jpg', 'rian.desrian@gmail.com.3.jpg', 'taman anas malik (7).jpg', 'pembangunan taman dan pendestrian dari kawasan pantai lohong sampai pantai cermin (6).jpg'),
+(20, 'Pantai Cermin', '<p>Terletak di pantai kota Pariaman paling selatan, pantai ini membentang di desa Karan Aur dan Taluak. Kata itu sendiri adalah singkatan dari nama dua desa yang berdekatan. Menawarkan panorama pantai alami yang masih asri dan alami, pantai ini cocok untuk Anda yang gemar beraktifitas berjalan. Selain itu, bagi pecinta olahraga bersepeda, pantai ini juga merupakan pilihan yang pas.</p>\r\n', '-', '-', 'Kelurahan Karan Aur, Pariaman Tengah', '-0.6355229', '100.1199944', 2020, 1, 'rian.desrian@gmail.com.2.jpg', 'ariyadii28.08@gmail.com.2.jpg', 'DSC_0032ed.jpg', 'DSC_0081.jpg'),
+(21, 'Pantai Kata', '<p>Terletak di pantai kota Pariaman paling selatan, pantai ini membentang di desa Karan Aur dan Taluak. Kata itu sendiri adalah singkatan dari nama dua desa yang berdekatan. Menawarkan panorama pantai alami yang masih asri dan alami, pantai ini cocok untuk Anda yang gemar beraktifitas berjalan. Selain itu, bagi pecinta olahraga bersepeda, pantai ini juga merupakan pilihan yang pas.</p>\r\n', '-', '-', 'Kelurahan Karan Aur, Pariaman Tengah', '-0.6464965', '100.1268444', 2020, 1, 'DSC_0017.jpg', 'DSC_0009.jpg', 'DSC_0063ed.jpg', 'DSC_0059ed.jpg');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `fasilitas_hotel`
+-- Table structure for table `fasilitas_hotel`
 --
 
 CREATE TABLE `fasilitas_hotel` (
@@ -135,21 +164,22 @@ CREATE TABLE `fasilitas_hotel` (
   `fh_tempat_parkir` int(2) DEFAULT NULL,
   `fh_wifi` int(2) DEFAULT NULL,
   `fh_restorant` int(2) DEFAULT NULL,
-  `fh_resepsionis` int(2) DEFAULT NULL
+  `fh_resepsionis` int(2) DEFAULT NULL,
+  `fh_transportasi` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `fasilitas_hotel`
+-- Dumping data for table `fasilitas_hotel`
 --
 
-INSERT INTO `fasilitas_hotel` (`fh_id`, `fh_hotel`, `fh_ac`, `fh_kolam_renang`, `fh_tempat_parkir`, `fh_wifi`, `fh_restorant`, `fh_resepsionis`) VALUES
-(2, 4, 1, 1, 1, 1, 1, 2),
-(3, 5, 1, 1, 2, 1, 2, 1);
+INSERT INTO `fasilitas_hotel` (`fh_id`, `fh_hotel`, `fh_ac`, `fh_kolam_renang`, `fh_tempat_parkir`, `fh_wifi`, `fh_restorant`, `fh_resepsionis`, `fh_transportasi`) VALUES
+(2, 4, 1, 1, 1, 1, 1, 2, 0),
+(3, 5, 1, 1, 2, 1, 2, 1, 0);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `fasilitas_kamar_hotel`
+-- Table structure for table `fasilitas_kamar_hotel`
 --
 
 CREATE TABLE `fasilitas_kamar_hotel` (
@@ -168,7 +198,7 @@ CREATE TABLE `fasilitas_kamar_hotel` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `fasilitas_kamar_hotel`
+-- Dumping data for table `fasilitas_kamar_hotel`
 --
 
 INSERT INTO `fasilitas_kamar_hotel` (`fkh_id`, `kh_id`, `fkh_kategori_kamar`, `fkh_balkon`, `fkh_coffe_maker`, `fkh_ac`, `fkh_hot_water`, `fkh_wifi`, `fkh_sarapan`, `fkh_shower`, `fkh_tv`, `fkh_kulkas`) VALUES
@@ -178,7 +208,7 @@ INSERT INTO `fasilitas_kamar_hotel` (`fkh_id`, `kh_id`, `fkh_kategori_kamar`, `f
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `hotel`
+-- Table structure for table `hotel`
 --
 
 CREATE TABLE `hotel` (
@@ -197,7 +227,7 @@ CREATE TABLE `hotel` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `hotel`
+-- Dumping data for table `hotel`
 --
 
 INSERT INTO `hotel` (`hotel_id`, `h_nama`, `h_alamat`, `h_telp`, `tahun`, `status`, `foto`, `foto2`, `foto3`, `foto4`, `h_latitude`, `h_longitude`) VALUES
@@ -208,7 +238,7 @@ INSERT INTO `hotel` (`hotel_id`, `h_nama`, `h_alamat`, `h_telp`, `tahun`, `statu
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kamar_hotel`
+-- Table structure for table `kamar_hotel`
 --
 
 CREATE TABLE `kamar_hotel` (
@@ -216,24 +246,27 @@ CREATE TABLE `kamar_hotel` (
   `kh_hotel` int(11) DEFAULT NULL,
   `kh_nama` varchar(255) DEFAULT NULL,
   `kh_luas_kamar` varchar(255) DEFAULT NULL,
-  `kh_jenis_bed` varchar(255) DEFAULT NULL,
+  `kh_jenis_bed` int(11) DEFAULT NULL,
   `kh_harga` int(11) DEFAULT NULL,
   `kh_sisa_kamar` int(11) DEFAULT NULL,
   `kh_jumlah_tamu` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `kamar_hotel`
+-- Dumping data for table `kamar_hotel`
 --
 
 INSERT INTO `kamar_hotel` (`kh_id`, `kh_hotel`, `kh_nama`, `kh_luas_kamar`, `kh_jenis_bed`, `kh_harga`, `kh_sisa_kamar`, `kh_jumlah_tamu`) VALUES
-(4, 4, '5', '30m x 34m', '3', 500000, 12, 5),
-(5, 4, '1', '22m x 44m', '2', 250000, 10, 3);
+(4, 4, '5', '30m x 34m', 3, 500000, 12, 5),
+(5, 4, '1', '22m x 44m', 2, 250000, 10, 3),
+(6, 4, '2', '30m x 34m', 1, 250000, 9, 2),
+(7, 4, '3', '20m x 45m', 1, 250000, 5, 3),
+(8, 4, '4', '22m x 44m', 2, 350000, 5, 2);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kategori_bed`
+-- Table structure for table `kategori_bed`
 --
 
 CREATE TABLE `kategori_bed` (
@@ -242,21 +275,19 @@ CREATE TABLE `kategori_bed` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `kategori_bed`
+-- Dumping data for table `kategori_bed`
 --
 
 INSERT INTO `kategori_bed` (`id_bed`, `nama_bed`) VALUES
-(1, 'Single Room'),
-(2, 'Superior Room'),
-(3, 'Deluxe Room'),
-(4, 'Junior Sweet Room'),
-(5, 'Sweet Room'),
-(6, 'Presidental Room');
+(1, 'Twin Bed'),
+(2, 'Single Bed'),
+(3, 'King Bed'),
+(4, 'Double Bed');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kategori_kamar`
+-- Table structure for table `kategori_kamar`
 --
 
 CREATE TABLE `kategori_kamar` (
@@ -265,7 +296,7 @@ CREATE TABLE `kategori_kamar` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `kategori_kamar`
+-- Dumping data for table `kategori_kamar`
 --
 
 INSERT INTO `kategori_kamar` (`id_kamar`, `nama_kamaar`) VALUES
@@ -279,7 +310,7 @@ INSERT INTO `kategori_kamar` (`id_kamar`, `nama_kamaar`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kecamatan`
+-- Table structure for table `kecamatan`
 --
 
 CREATE TABLE `kecamatan` (
@@ -292,7 +323,7 @@ CREATE TABLE `kecamatan` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kerajinan`
+-- Table structure for table `kerajinan`
 --
 
 CREATE TABLE `kerajinan` (
@@ -312,7 +343,7 @@ CREATE TABLE `kerajinan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `kerajinan`
+-- Dumping data for table `kerajinan`
 --
 
 INSERT INTO `kerajinan` (`kerajinan_id`, `kerajinan_jenis`, `kerajinan_usaha`, `kerajinan_pemilik`, `kerajinan_alamat`, `kerajinan_telepon`, `kerajinan_keterangan`, `kerajinan_foto1`, `kerajinan_foto2`, `latitude`, `longitude`, `tahun`, `status`) VALUES
@@ -321,7 +352,7 @@ INSERT INTO `kerajinan` (`kerajinan_id`, `kerajinan_jenis`, `kerajinan_usaha`, `
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kuliner`
+-- Table structure for table `kuliner`
 --
 
 CREATE TABLE `kuliner` (
@@ -334,7 +365,7 @@ CREATE TABLE `kuliner` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `kuliner`
+-- Dumping data for table `kuliner`
 --
 
 INSERT INTO `kuliner` (`id_kuliner`, `nama`, `foto`, `keterangan`, `tahun`, `status`) VALUES
@@ -344,7 +375,7 @@ INSERT INTO `kuliner` (`id_kuliner`, `nama`, `foto`, `keterangan`, `tahun`, `sta
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `login`
+-- Table structure for table `login`
 --
 
 CREATE TABLE `login` (
@@ -355,7 +386,7 @@ CREATE TABLE `login` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data untuk tabel `login`
+-- Dumping data for table `login`
 --
 
 INSERT INTO `login` (`login_id`, `id_user`, `id_KAB`, `id_KEC`) VALUES
@@ -370,7 +401,7 @@ INSERT INTO `login` (`login_id`, `id_user`, `id_KAB`, `id_KEC`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `map`
+-- Table structure for table `map`
 --
 
 CREATE TABLE `map` (
@@ -385,7 +416,7 @@ CREATE TABLE `map` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `map`
+-- Dumping data for table `map`
 --
 
 INSERT INTO `map` (`idmap`, `latitude`, `longtitude`, `alamat`, `npsn`, `image`, `created_at`, `updated_at`) VALUES
@@ -400,7 +431,7 @@ INSERT INTO `map` (`idmap`, `latitude`, `longtitude`, `alamat`, `npsn`, `image`,
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `migration`
+-- Table structure for table `migration`
 --
 
 CREATE TABLE `migration` (
@@ -409,7 +440,7 @@ CREATE TABLE `migration` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `migration`
+-- Dumping data for table `migration`
 --
 
 INSERT INTO `migration` (`version`, `apply_time`) VALUES
@@ -451,7 +482,30 @@ INSERT INTO `migration` (`version`, `apply_time`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `profil`
+-- Table structure for table `posts`
+--
+
+CREATE TABLE `posts` (
+  `id` int(11) NOT NULL,
+  `title` varchar(200) NOT NULL,
+  `content` text NOT NULL,
+  `category` varchar(100) NOT NULL,
+  `created_date` date NOT NULL,
+  `update_date` date NOT NULL,
+  `status` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `posts`
+--
+
+INSERT INTO `posts` (`id`, `title`, `content`, `category`, `created_date`, `update_date`, `status`) VALUES
+(3, 'testing 1', '<p>testing aplikasi</p>\r\n', 'umum', '2022-02-14', '2022-02-14', '1');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `profil`
 --
 
 CREATE TABLE `profil` (
@@ -464,7 +518,7 @@ CREATE TABLE `profil` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data untuk tabel `profil`
+-- Dumping data for table `profil`
 --
 
 INSERT INTO `profil` (`prof_id`, `prof_judul`, `prof_gambar`, `prof_isi`, `slug`, `prof_status`) VALUES
@@ -477,7 +531,7 @@ INSERT INTO `profil` (`prof_id`, `prof_judul`, `prof_gambar`, `prof_isi`, `slug`
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `restoran`
+-- Table structure for table `restoran`
 --
 
 CREATE TABLE `restoran` (
@@ -496,7 +550,7 @@ CREATE TABLE `restoran` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `restoran`
+-- Dumping data for table `restoran`
 --
 
 INSERT INTO `restoran` (`restoran_id`, `restoran_nama`, `restoran_alamat`, `restoran_telepon`, `restoran_detail`, `restoran_menu`, `restoran_photo`, `restoran_pemilik`, `restoran_latitude`, `restoran_longitude`, `tahun`, `status`) VALUES
@@ -505,7 +559,7 @@ INSERT INTO `restoran` (`restoran_id`, `restoran_nama`, `restoran_alamat`, `rest
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_akses`
+-- Table structure for table `tb_akses`
 --
 
 CREATE TABLE `tb_akses` (
@@ -516,7 +570,7 @@ CREATE TABLE `tb_akses` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tb_akses`
+-- Dumping data for table `tb_akses`
 --
 
 INSERT INTO `tb_akses` (`akses_id`, `akses_destinasi`, `akses_transportasi`, `akses_distance`) VALUES
@@ -528,7 +582,7 @@ INSERT INTO `tb_akses` (`akses_id`, `akses_destinasi`, `akses_transportasi`, `ak
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_atm`
+-- Table structure for table `tb_atm`
 --
 
 CREATE TABLE `tb_atm` (
@@ -543,7 +597,7 @@ CREATE TABLE `tb_atm` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data untuk tabel `tb_atm`
+-- Dumping data for table `tb_atm`
 --
 
 INSERT INTO `tb_atm` (`atm_id`, `atm_nama`, `atm_nama_bank`, `atm_alamat`, `atm_latitude`, `atm_longitude`, `tahun`, `status`) VALUES
@@ -559,7 +613,7 @@ INSERT INTO `tb_atm` (`atm_id`, `atm_nama`, `atm_nama_bank`, `atm_alamat`, `atm_
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_berita`
+-- Table structure for table `tb_berita`
 --
 
 CREATE TABLE `tb_berita` (
@@ -567,23 +621,23 @@ CREATE TABLE `tb_berita` (
   `berita_foto` text COLLATE utf8_unicode_ci NOT NULL,
   `berita_judul` text COLLATE utf8_unicode_ci NOT NULL,
   `berita_isi` text COLLATE utf8_unicode_ci NOT NULL,
-  `berita_tanggal` date NOT NULL DEFAULT current_timestamp(),
+  `berita_tanggal` datetime NOT NULL,
   `berita_hit` int(11) DEFAULT NULL,
   `slug` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `berita_status` smallint(3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data untuk tabel `tb_berita`
+-- Dumping data for table `tb_berita`
 --
 
 INSERT INTO `tb_berita` (`berita_id`, `berita_foto`, `berita_judul`, `berita_isi`, `berita_tanggal`, `berita_hit`, `slug`, `berita_status`) VALUES
-(4, '1582513411-berita.jpg', 'Pemko Pariaman Study Tiru ke Mesjid Paripurna Kota Pekanbaru', '<p>Pemko Pariaman Study Tiru ke Mesjid Paripurna Kota Pekanbaru&nbsp;Pemko Pariaman Study Tiru ke Mesjid Paripurna Kota Pekanbaru&nbsp;Pemko Pariaman Study Tiru ke Mesjid Paripurna Kota Pekanbaru&nbsp;Pemko Pariaman Study Tiru ke Mesjid Paripurna Kota Pekanbaru&nbsp;Pemko Pariaman Study Tiru ke Mesjid Paripurna Kota Pekanbaru&nbsp;Pemko Pariaman Study Tiru ke Mesjid Paripurna Kota Pekanbaru&nbsp;Pemko Pariaman Study Tiru ke Mesjid Paripurna Kota Pekanbaru</p>\r\n', '2020-02-24', 19, 'pemko-pariaman-study-tiru-ke-mesjid-paripurna-kota-pekanbaru', 1);
+(4, '1582513411-berita.jpg', 'Pemko Pariaman Study Tiru ke Mesjid Paripurna Kota Pekanbaru', '<p>Pemko Pariaman Study Tiru ke Mesjid Paripurna Kota Pekanbaru&nbsp;Pemko Pariaman Study Tiru ke Mesjid Paripurna Kota Pekanbaru&nbsp;Pemko Pariaman Study Tiru ke Mesjid Paripurna Kota Pekanbaru&nbsp;Pemko Pariaman Study Tiru ke Mesjid Paripurna Kota Pekanbaru&nbsp;Pemko Pariaman Study Tiru ke Mesjid Paripurna Kota Pekanbaru&nbsp;Pemko Pariaman Study Tiru ke Mesjid Paripurna Kota Pekanbaru&nbsp;Pemko Pariaman Study Tiru ke Mesjid Paripurna Kota Pekanbaru</p>\r\n', '2020-02-24 00:00:00', 19, 'pemko-pariaman-study-tiru-ke-mesjid-paripurna-kota-pekanbaru', 1);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_masjid`
+-- Table structure for table `tb_masjid`
 --
 
 CREATE TABLE `tb_masjid` (
@@ -597,7 +651,7 @@ CREATE TABLE `tb_masjid` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data untuk tabel `tb_masjid`
+-- Dumping data for table `tb_masjid`
 --
 
 INSERT INTO `tb_masjid` (`m_id`, `m_nama`, `m_alamat`, `m_latitude`, `m_longitude`, `tahun`, `status`) VALUES
@@ -606,7 +660,18 @@ INSERT INTO `tb_masjid` (`m_id`, `m_nama`, `m_alamat`, `m_latitude`, `m_longitud
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_parkir`
+-- Table structure for table `tb_namakamar`
+--
+
+CREATE TABLE `tb_namakamar` (
+  `namakamar_id` int(11) NOT NULL,
+  `namakamar` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_parkir`
 --
 
 CREATE TABLE `tb_parkir` (
@@ -619,7 +684,7 @@ CREATE TABLE `tb_parkir` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data untuk tabel `tb_parkir`
+-- Dumping data for table `tb_parkir`
 --
 
 INSERT INTO `tb_parkir` (`p_id`, `p_nama`, `p_alamat`, `p_latitude`, `p_longitude`, `p_status`) VALUES
@@ -628,7 +693,36 @@ INSERT INTO `tb_parkir` (`p_id`, `p_nama`, `p_alamat`, `p_latitude`, `p_longitud
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_rs`
+-- Table structure for table `tb_pemesanan`
+--
+
+CREATE TABLE `tb_pemesanan` (
+  `pemesanan_id` int(11) NOT NULL,
+  `pemesanan_hotel_id` int(11) DEFAULT NULL,
+  `pemesanan_checkin` datetime DEFAULT NULL,
+  `pemesanan_durasi` varchar(50) DEFAULT NULL,
+  `pemesanan_tamu_dewasa` int(2) DEFAULT NULL,
+  `pemesanan_tamu_anak` int(2) DEFAULT NULL,
+  `pemesanan_jumlah_kamar` int(2) DEFAULT NULL,
+  `pemesanan_total` double DEFAULT NULL,
+  `pemesanan_nama` varchar(255) DEFAULT NULL,
+  `pemesanan_notelp` varchar(50) DEFAULT NULL,
+  `pemesanan_email` varchar(50) DEFAULT NULL,
+  `pemesanan_status` int(2) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tb_pemesanan`
+--
+
+INSERT INTO `tb_pemesanan` (`pemesanan_id`, `pemesanan_hotel_id`, `pemesanan_checkin`, `pemesanan_durasi`, `pemesanan_tamu_dewasa`, `pemesanan_tamu_anak`, `pemesanan_jumlah_kamar`, `pemesanan_total`, `pemesanan_nama`, `pemesanan_notelp`, `pemesanan_email`, `pemesanan_status`) VALUES
+(14, 4, '2020-07-05 00:00:00', '2', 2, 1, 1, NULL, 'sindi', '088052258558', 'sindi@gmail.com', 1),
+(15, 5, '2020-07-10 00:00:00', '1', 1, 1, 1, NULL, 'gina', '0812', 'gina@gmail.com', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_rs`
 --
 
 CREATE TABLE `tb_rs` (
@@ -641,7 +735,7 @@ CREATE TABLE `tb_rs` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data untuk tabel `tb_rs`
+-- Dumping data for table `tb_rs`
 --
 
 INSERT INTO `tb_rs` (`rs_id`, `rs_nama`, `rs_alamat`, `rs_latitude`, `rs_longitude`, `rs_status`) VALUES
@@ -651,7 +745,7 @@ INSERT INTO `tb_rs` (`rs_id`, `rs_nama`, `rs_alamat`, `rs_latitude`, `rs_longitu
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_spbu`
+-- Table structure for table `tb_spbu`
 --
 
 CREATE TABLE `tb_spbu` (
@@ -665,7 +759,7 @@ CREATE TABLE `tb_spbu` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data untuk tabel `tb_spbu`
+-- Dumping data for table `tb_spbu`
 --
 
 INSERT INTO `tb_spbu` (`spbu_id`, `spbu_nama`, `spbu_alamat`, `spbu_latitude`, `spbu_longitude`, `tahun`, `status`) VALUES
@@ -678,7 +772,7 @@ INSERT INTO `tb_spbu` (`spbu_id`, `spbu_nama`, `spbu_alamat`, `spbu_latitude`, `
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `user`
+-- Table structure for table `user`
 --
 
 CREATE TABLE `user` (
@@ -697,171 +791,197 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data untuk tabel `user`
+-- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`id`, `username`, `auth_key`, `password_hash`, `password_reset_token`, `email`, `level`, `status`, `desa`, `nama_desa`, `created_at`, `updated_at`) VALUES
-(1, 'admin', 'xf4pQy3jjZprinN31u2nLZm_WgdIvidX', '$2y$13$BQP54tWmYAqnH3kWUNDbPOZCLRcNhlDgmiOhs1AIdLuulnxx/IXX6', NULL, 'adm@gmail.com', 1, 10, 0, '', 1565422383, 1542264946);
+(1, 'admin', 'xf4pQy3jjZprinN31u2nLZm_WgdIvidX', '$2y$13$BQP54tWmYAqnH3kWUNDbPOZCLRcNhlDgmiOhs1AIdLuulnxx/IXX6', NULL, 'adm@gmail.com', 1, 10, 0, '', 1565422383, 1542264946),
+(2, 'pariwisata', 'j9DAxkbrOnZnN-Lvm2xUREDNOVcZ-ITa', '$2y$13$jFf5iwo7NkHauHeLzpD8fOZR5z4l29iyuuEcZBYojoxHdCfJwV8dy', NULL, '', 2, 10, NULL, '', 1591845085, 0);
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indeks untuk tabel `agama`
+-- Indexes for table `agama`
 --
 ALTER TABLE `agama`
   ADD PRIMARY KEY (`agama_id`);
 
 --
--- Indeks untuk tabel `agenda`
+-- Indexes for table `agenda`
 --
 ALTER TABLE `agenda`
   ADD PRIMARY KEY (`agenda_id`);
 
 --
--- Indeks untuk tabel `biodata`
+-- Indexes for table `biodata`
 --
 ALTER TABLE `biodata`
   ADD PRIMARY KEY (`biodata_id`);
 
 --
--- Indeks untuk tabel `destinasi_wisata`
+-- Indexes for table `cagar_budaya`
+--
+ALTER TABLE `cagar_budaya`
+  ADD PRIMARY KEY (`cagar_id`);
+
+--
+-- Indexes for table `destinasi_wisata`
 --
 ALTER TABLE `destinasi_wisata`
   ADD PRIMARY KEY (`id_destinasi`);
 
 --
--- Indeks untuk tabel `fasilitas_hotel`
+-- Indexes for table `fasilitas_hotel`
 --
 ALTER TABLE `fasilitas_hotel`
   ADD PRIMARY KEY (`fh_id`);
 
 --
--- Indeks untuk tabel `fasilitas_kamar_hotel`
+-- Indexes for table `fasilitas_kamar_hotel`
 --
 ALTER TABLE `fasilitas_kamar_hotel`
   ADD PRIMARY KEY (`fkh_id`);
 
 --
--- Indeks untuk tabel `hotel`
+-- Indexes for table `hotel`
 --
 ALTER TABLE `hotel`
   ADD PRIMARY KEY (`hotel_id`);
 
 --
--- Indeks untuk tabel `kamar_hotel`
+-- Indexes for table `kamar_hotel`
 --
 ALTER TABLE `kamar_hotel`
-  ADD PRIMARY KEY (`kh_id`);
+  ADD PRIMARY KEY (`kh_id`),
+  ADD KEY `kh_jenis_bed` (`kh_jenis_bed`);
 
 --
--- Indeks untuk tabel `kategori_bed`
+-- Indexes for table `kategori_bed`
 --
 ALTER TABLE `kategori_bed`
   ADD PRIMARY KEY (`id_bed`);
 
 --
--- Indeks untuk tabel `kategori_kamar`
+-- Indexes for table `kategori_kamar`
 --
 ALTER TABLE `kategori_kamar`
   ADD PRIMARY KEY (`id_kamar`);
 
 --
--- Indeks untuk tabel `kecamatan`
+-- Indexes for table `kecamatan`
 --
 ALTER TABLE `kecamatan`
   ADD PRIMARY KEY (`kecamatan_id`),
   ADD KEY `fk_kecamatan_kota` (`id_kota`);
 
 --
--- Indeks untuk tabel `kerajinan`
+-- Indexes for table `kerajinan`
 --
 ALTER TABLE `kerajinan`
   ADD PRIMARY KEY (`kerajinan_id`);
 
 --
--- Indeks untuk tabel `kuliner`
+-- Indexes for table `kuliner`
 --
 ALTER TABLE `kuliner`
   ADD PRIMARY KEY (`id_kuliner`);
 
 --
--- Indeks untuk tabel `login`
+-- Indexes for table `login`
 --
 ALTER TABLE `login`
   ADD PRIMARY KEY (`login_id`),
   ADD KEY `fk_login_user` (`id_user`);
 
 --
--- Indeks untuk tabel `map`
+-- Indexes for table `map`
 --
 ALTER TABLE `map`
   ADD PRIMARY KEY (`idmap`),
   ADD KEY `idx-map-npsn` (`npsn`);
 
 --
--- Indeks untuk tabel `migration`
+-- Indexes for table `migration`
 --
 ALTER TABLE `migration`
   ADD PRIMARY KEY (`version`);
 
 --
--- Indeks untuk tabel `profil`
+-- Indexes for table `posts`
+--
+ALTER TABLE `posts`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `profil`
 --
 ALTER TABLE `profil`
   ADD PRIMARY KEY (`prof_id`);
 
 --
--- Indeks untuk tabel `restoran`
+-- Indexes for table `restoran`
 --
 ALTER TABLE `restoran`
   ADD PRIMARY KEY (`restoran_id`);
 
 --
--- Indeks untuk tabel `tb_akses`
+-- Indexes for table `tb_akses`
 --
 ALTER TABLE `tb_akses`
   ADD PRIMARY KEY (`akses_id`);
 
 --
--- Indeks untuk tabel `tb_atm`
+-- Indexes for table `tb_atm`
 --
 ALTER TABLE `tb_atm`
   ADD PRIMARY KEY (`atm_id`);
 
 --
--- Indeks untuk tabel `tb_berita`
+-- Indexes for table `tb_berita`
 --
 ALTER TABLE `tb_berita`
   ADD PRIMARY KEY (`berita_id`);
 
 --
--- Indeks untuk tabel `tb_masjid`
+-- Indexes for table `tb_masjid`
 --
 ALTER TABLE `tb_masjid`
   ADD PRIMARY KEY (`m_id`);
 
 --
--- Indeks untuk tabel `tb_parkir`
+-- Indexes for table `tb_namakamar`
+--
+ALTER TABLE `tb_namakamar`
+  ADD PRIMARY KEY (`namakamar_id`);
+
+--
+-- Indexes for table `tb_parkir`
 --
 ALTER TABLE `tb_parkir`
   ADD PRIMARY KEY (`p_id`);
 
 --
--- Indeks untuk tabel `tb_rs`
+-- Indexes for table `tb_pemesanan`
+--
+ALTER TABLE `tb_pemesanan`
+  ADD PRIMARY KEY (`pemesanan_id`);
+
+--
+-- Indexes for table `tb_rs`
 --
 ALTER TABLE `tb_rs`
   ADD PRIMARY KEY (`rs_id`);
 
 --
--- Indeks untuk tabel `tb_spbu`
+-- Indexes for table `tb_spbu`
 --
 ALTER TABLE `tb_spbu`
   ADD PRIMARY KEY (`spbu_id`);
 
 --
--- Indeks untuk tabel `user`
+-- Indexes for table `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`),
@@ -869,158 +989,192 @@ ALTER TABLE `user`
   ADD UNIQUE KEY `password_reset_token` (`password_reset_token`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `agama`
+-- AUTO_INCREMENT for table `agama`
 --
 ALTER TABLE `agama`
   MODIFY `agama_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `agenda`
+-- AUTO_INCREMENT for table `agenda`
 --
 ALTER TABLE `agenda`
   MODIFY `agenda_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT untuk tabel `biodata`
+-- AUTO_INCREMENT for table `biodata`
 --
 ALTER TABLE `biodata`
   MODIFY `biodata_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `destinasi_wisata`
+-- AUTO_INCREMENT for table `cagar_budaya`
 --
-ALTER TABLE `destinasi_wisata`
-  MODIFY `id_destinasi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+ALTER TABLE `cagar_budaya`
+  MODIFY `cagar_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT untuk tabel `fasilitas_hotel`
+-- AUTO_INCREMENT for table `destinasi_wisata`
+--
+ALTER TABLE `destinasi_wisata`
+  MODIFY `id_destinasi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+
+--
+-- AUTO_INCREMENT for table `fasilitas_hotel`
 --
 ALTER TABLE `fasilitas_hotel`
   MODIFY `fh_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT untuk tabel `fasilitas_kamar_hotel`
+-- AUTO_INCREMENT for table `fasilitas_kamar_hotel`
 --
 ALTER TABLE `fasilitas_kamar_hotel`
   MODIFY `fkh_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT untuk tabel `hotel`
+-- AUTO_INCREMENT for table `hotel`
 --
 ALTER TABLE `hotel`
   MODIFY `hotel_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT untuk tabel `kamar_hotel`
+-- AUTO_INCREMENT for table `kamar_hotel`
 --
 ALTER TABLE `kamar_hotel`
-  MODIFY `kh_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `kh_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT untuk tabel `kategori_bed`
+-- AUTO_INCREMENT for table `kategori_bed`
 --
 ALTER TABLE `kategori_bed`
   MODIFY `id_bed` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT untuk tabel `kategori_kamar`
+-- AUTO_INCREMENT for table `kategori_kamar`
 --
 ALTER TABLE `kategori_kamar`
   MODIFY `id_kamar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT untuk tabel `kecamatan`
+-- AUTO_INCREMENT for table `kecamatan`
 --
 ALTER TABLE `kecamatan`
   MODIFY `kecamatan_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `kerajinan`
+-- AUTO_INCREMENT for table `kerajinan`
 --
 ALTER TABLE `kerajinan`
   MODIFY `kerajinan_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT untuk tabel `kuliner`
+-- AUTO_INCREMENT for table `kuliner`
 --
 ALTER TABLE `kuliner`
   MODIFY `id_kuliner` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT untuk tabel `login`
+-- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
   MODIFY `login_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT untuk tabel `map`
+-- AUTO_INCREMENT for table `map`
 --
 ALTER TABLE `map`
   MODIFY `idmap` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT untuk tabel `profil`
+-- AUTO_INCREMENT for table `posts`
+--
+ALTER TABLE `posts`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `profil`
 --
 ALTER TABLE `profil`
   MODIFY `prof_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT untuk tabel `restoran`
+-- AUTO_INCREMENT for table `restoran`
 --
 ALTER TABLE `restoran`
   MODIFY `restoran_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_akses`
+-- AUTO_INCREMENT for table `tb_akses`
 --
 ALTER TABLE `tb_akses`
   MODIFY `akses_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_atm`
+-- AUTO_INCREMENT for table `tb_atm`
 --
 ALTER TABLE `tb_atm`
   MODIFY `atm_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_berita`
+-- AUTO_INCREMENT for table `tb_berita`
 --
 ALTER TABLE `tb_berita`
   MODIFY `berita_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_masjid`
+-- AUTO_INCREMENT for table `tb_masjid`
 --
 ALTER TABLE `tb_masjid`
   MODIFY `m_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_parkir`
+-- AUTO_INCREMENT for table `tb_namakamar`
+--
+ALTER TABLE `tb_namakamar`
+  MODIFY `namakamar_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `tb_parkir`
 --
 ALTER TABLE `tb_parkir`
   MODIFY `p_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_rs`
+-- AUTO_INCREMENT for table `tb_pemesanan`
+--
+ALTER TABLE `tb_pemesanan`
+  MODIFY `pemesanan_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
+-- AUTO_INCREMENT for table `tb_rs`
 --
 ALTER TABLE `tb_rs`
   MODIFY `rs_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_spbu`
+-- AUTO_INCREMENT for table `tb_spbu`
 --
 ALTER TABLE `tb_spbu`
   MODIFY `spbu_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT untuk tabel `user`
+-- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `kamar_hotel`
+--
+ALTER TABLE `kamar_hotel`
+  ADD CONSTRAINT `kamar_hotel_ibfk_1` FOREIGN KEY (`kh_jenis_bed`) REFERENCES `kategori_bed` (`id_bed`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
