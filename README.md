@@ -1,25 +1,10 @@
-<p align="center">
-    <a href="https://github.com/yiisoft" target="_blank">
-        <img src="https://avatars0.githubusercontent.com/u/993323" height="100px">
-    </a>
-    <h1 align="center">Yii 2 Advanced Project Template</h1>
-    <br>
-</p>
-
-Yii 2 Advanced Project Template is a skeleton [Yii 2](http://www.yiiframework.com/) application best for
-developing complex Web applications with multiple tiers.
-
-The template includes three tiers: front end, back end, and console, each of which
-is a separate Yii application.
-
-The template is designed to work in a team development environment. It supports
-deploying the application in different environments.
-
-Documentation is at [docs/guide/README.md](docs/guide/README.md).
-
-[![Latest Stable Version](https://poser.pugx.org/yiisoft/yii2-app-advanced/v/stable.png)](https://packagist.org/packages/yiisoft/yii2-app-advanced)
-[![Total Downloads](https://poser.pugx.org/yiisoft/yii2-app-advanced/downloads.png)](https://packagist.org/packages/yiisoft/yii2-app-advanced)
-[![Build Status](https://travis-ci.org/yiisoft/yii2-app-advanced.svg?branch=master)](https://travis-ci.org/yiisoft/yii2-app-advanced)
+ Aplikasi ini merupakan backend dan frontend yang saya buat pada sesi tes FS di Sharing Vision. Aplikasi ini saya buat menggunakan Framework Yii2. Berikut alur dalam menjalankan aplikasi :
+ 1. Database terletak di dalam source code ini, dengan nama svshindy.sql
+ 2. Untuk menjalankan aplikasi dengan mengakses link localhost/svshindy maka akan lansung diarahkan ke bagian frontend aplikasi
+ 3. Pada header aplikasi akan ada menu "LOGIN" digunakan untuk mengakses bagian backend aplikasi
+ 4. Username dan password dari aplikasi ini untuk login ke bagian backend adalah
+    Username : admin
+    Password : 040812
 
 DIRECTORY STRUCTURE
 -------------------
